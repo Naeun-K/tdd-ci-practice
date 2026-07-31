@@ -1,27 +1,31 @@
 name: PR Check
 
-  on:
-    pull_request:
-      branches: [main]
+on:
+  pull_request:
+    branches: [main]
 
-  permissions:
-    constents: read
+permissions:
+  contents: read
 
-  jobs:
-    quality:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v6
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
 
-        - name: Setup Node 26
-          uses: actions/setup-node@v6
-          with:
-            node-version: 26
-            cache: npm
+name: Checkout
+      uses: actions/checkout@v6
 
-        - name: install
-          run: npm ci
 
-        - name: Test
-          run: npm test
+name: Setup Node 24
+      uses: actions/setup-node@v6
+      with:
+        node-version: 24
+        cache: npm
+
+
+name: Install
+      run: npm ci
+
+
+name: Test
+      run: npm test
