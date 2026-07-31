@@ -17,7 +17,7 @@ name: PR Check
         - name: Setup Node 26
           uses: actions/setup-node@v6
           with:
-            node-version: 26
+            node-version: 24
             cache: npm
 
         - name: install
